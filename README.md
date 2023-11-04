@@ -1,24 +1,37 @@
-# blood-report-analysis
-# Blood Report Analysis - Machine Learning Project
-
-**Introduction:**
-
+## Blood Report Analysis
+**Introduction**:
 Blood Report Analysis is a machine learning project that aims to analyze and interpret blood test reports to provide insights and predictions related to a patient's health.
 
-**Features:**
+**Features**:
+This project allows users to upload a blood report and interpret the findings.
 
-- This project will allow users to upload a blood report and interpret the findings. 
+**Installation**:
+Clone the repository:
 
-**Installation:**
+bash
+Copy code
+git clone https://github.com/jyotsna2411/blood-report-analysis.git
+Install required packages:
 
-- Clone the repository: `https://github.com/jyotsna2411/blood-report-analysis.git`
-- Install required packages: `pip install -r requirements.txt`
+bash
+Copy code
+pip install -r requirements.txt
+Usage:
+Data:
+We have created our datasets by using real-time reports from medical labs.
 
-**Usage:**
+**Models**:
+We leverage different machine-learning models, computer vision, and NLTK for this project.
 
-- 
+**Contributing**:
+We welcome contributions! Please follow the guidelines outlined in CONTRIBUTING.md.
 
-**Data:**
+**License**:
+This project is licensed under the MIT License.
+
+Feel free to explore and contribute to the project!
+
+
 
 - We have created our datasets by using real-time reports from medical labs.
    
