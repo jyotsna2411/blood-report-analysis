@@ -134,7 +134,7 @@ def make_prediction():
     11: 'Unknown'
 }
     # Load the saved XGBoost model from the pickle file
-    with open(r'trained_pipeline.pkl', 'rb') as model_file:
+    with open(r'D:\OneDrive\Desktop\Ui_Blood_report\blood-report-analysis\trained_pipeline.pkl', 'rb') as model_file:
         loaded_pipeline = pickle.load(model_file)
     prediction=loaded_pipeline.predict(df.iloc[[0]])[0]  
     print(prediction_mapping[prediction]) 
@@ -142,7 +142,7 @@ def make_prediction():
     
 
 
-# Set page title and configure layout
+# Set the page title and configure layout
 st.set_page_config(
     page_title="Blood Report Analyzer",
     page_icon=":microscope:",
