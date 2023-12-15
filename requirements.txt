@@ -1,0 +1,9 @@
+opencv-python-headless
+Pillow
+pytesseract
+nltk
+pandas
+scikit-learn
+xgboost
+numpy
+pandas
