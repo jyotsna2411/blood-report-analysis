@@ -17,6 +17,8 @@ import shutil
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update with your actual path
 
 df=pd.read_csv(r'df')
+
+
 # Handling Image and converting to text
 
 class ImageProcessor:
@@ -47,7 +49,6 @@ class ImageProcessor:
             img = Image.open(file_path)
 
             # # Open the image using OpenCV
-            # img = cv2.imread(file_path)
 
             # Apply image enhancement functions
             img = self.get_grayscale(img)
@@ -119,7 +120,7 @@ image_processor = ImageProcessor()
 
 
 def make_prediction():
-    print(df.columns)
+    
     prediction_mapping={
     0: 'Allergies or Parasitic Infection',
     1: 'Anemia',
@@ -132,13 +133,14 @@ def make_prediction():
     8: 'Normal',
     9: 'Thalassemia',
     10: 'Thrombocytosis',
-    11: 'Unknown'
+    11: 'Unknown to medical Science'
 }
     # Load the saved XGBoost model from the pickle file
     with open(r'D:\OneDrive\Desktop\Ui_Blood_report\blood-report-analysis\trained_pipeline.pkl', 'rb') as model_file:
         loaded_pipeline = pickle.load(model_file)
     prediction=loaded_pipeline.predict(df.iloc[[0]])[0]  
     print(prediction_mapping[prediction]) 
+    
     # Get probability estimates
     probabilities = loaded_pipeline.predict_proba(df.iloc[[0]])
 
@@ -148,11 +150,18 @@ def make_prediction():
     # Print predicted class and associated probability
     print(f"Predicted Class: {prediction_mapping[prediction]}")
     print("Class Probabilities:")
-    for label, prob in zip(class_labels, probabilities[0]):
-        print(f"{prediction_mapping[label]}: {prob:.4f}")
+  
+    def get_class_prob():
+        for label, prob in zip(class_labels, probabilities[0]):
+            if prediction_mapping[label]== prediction_mapping[prediction]:
+                max_prob_label = prediction_mapping[label]
+                max_prob_value = prob
+                return f"Based on our analysis, the result is interpreted as {max_prob_label}.\nThere is a {max_prob_value:.4f} probability of this interpretation."
 
+            
+    class_prob=get_class_prob()
     # Return the predicted class
-    return prediction_mapping[prediction]
+    return class_prob
     
 
 
@@ -264,7 +273,6 @@ st.write(
     """
     - The accepted file formats for blood report documents include JPG, JPEG, and PNG.
     - Ensure that your document is clear and legible for accurate analysis.
-    - Download the converted PDF to review the analyzed insights of your blood report.
     """
 )
 
