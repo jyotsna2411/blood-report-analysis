@@ -14,17 +14,8 @@ import xgboost as xgb
 import shutil
 
 
-pytesseract.pytesseract.tesseract_cmd = None
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update with your actual path
 
-# search for tesseract binary in path
-@st.cache_resource
-def find_tesseract_binary() -> str:
-    return shutil.which("tesseract")
-
-# set tesseract binary path
-pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
-if not pytesseract.pytesseract.tesseract_cmd:
-    st.error("Tesseract binary not found in PATH. Please install Tesseract.")
 df=pd.read_csv(r'df')
 # Handling Image and converting to text
 
@@ -148,6 +139,19 @@ def make_prediction():
         loaded_pipeline = pickle.load(model_file)
     prediction=loaded_pipeline.predict(df.iloc[[0]])[0]  
     print(prediction_mapping[prediction]) 
+    # Get probability estimates
+    probabilities = loaded_pipeline.predict_proba(df.iloc[[0]])
+
+    # Assuming the class labels are in the same order as your `prediction_mapping`
+    class_labels = list(prediction_mapping.keys())
+
+    # Print predicted class and associated probability
+    print(f"Predicted Class: {prediction_mapping[prediction]}")
+    print("Class Probabilities:")
+    for label, prob in zip(class_labels, probabilities[0]):
+        print(f"{prediction_mapping[label]}: {prob:.4f}")
+
+    # Return the predicted class
     return prediction_mapping[prediction]
     
 
