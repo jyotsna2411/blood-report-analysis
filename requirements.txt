@@ -1,0 +1,7 @@
+opencv-python
+Pillow
+pytesseract
+nltk
+pandas
+scikit-learn
+xgboost
