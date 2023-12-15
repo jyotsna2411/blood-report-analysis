@@ -38,9 +38,21 @@ Feel free to explore and contribute to the project!
 **Models:**
 
 - We will be using different machine-learning models, computer vision, NLTK for this project
+- Random Forest
+- Naive Bayes
+- SVM(Support Vector Machine)
+- XGBoost
+- KNN(K Nearest Neighbour)
+- ADA Boost
+
+
 - 
 **Contributing:**
 
-- 
+- Feel Free to contribute
 
 **License:**
+
+- This project is licensed under the MIT License.
+
+
