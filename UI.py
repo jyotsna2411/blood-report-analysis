@@ -235,7 +235,7 @@ with cent_co:
             df = df.drop(columns=["Unnamed: 0"])
 
         result=make_prediction()
-        st.write("Prediction Result:")
+        st.text('Report results:')
         st.text(result)
         with cent_co:
             st.image(image, caption="Uploaded Blood Report Image", use_column_width=False, width=500, )
