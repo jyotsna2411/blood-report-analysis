@@ -5,3 +5,5 @@ nltk
 pandas
 scikit-learn
 xgboost
+numpy
+pandas
