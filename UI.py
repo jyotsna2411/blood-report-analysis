@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 import xgboost as xgb
 
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update with your actual path
+pytesseract.pytesseract.tesseract_cmd = None  # Update with your actual path
 
 df=pd.read_csv(r'df')
 # Handling Image and converting to text
