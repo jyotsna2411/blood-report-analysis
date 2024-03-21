@@ -2,6 +2,10 @@
 **Introduction**:
 This project is a blood test analysis tool designed to interpret blood test results and identify potential health conditions. By inputting blood test reports, users can obtain analysis results and insights. The tool also allows for the testing of sample files provided in the repository.
 
+**Dataset**
+Created our datasets by using real-time reports from medical labs. The dataset consists of CBC(Complete Blood Count) reports, the potential for expansion to include additional types of blood test reports in the future could further enhance the tool's usefulness for users.
+
+
 **Features**:
 Based on the provided context, the features of this project include:
 
@@ -26,7 +30,6 @@ Personalized Analysis: By inputting their blood test values, users can receive p
 
 Empowerment: The project empowers users to take charge of their health by providing a user-friendly interface to interpret CBC reports, fostering greater health awareness and informed decision-making.
 
-While the current focus is on CBC reports, the potential for expansion to include additional types of blood test reports in the future could further enhance the tool's usefulness for users.
 
 **Installation**:
 Clone the repository:
@@ -56,11 +59,7 @@ Feel free to explore and contribute to the project!
 
 
 
-- We have created our datasets by using real-time reports from medical labs.
-   
 
-**License:**
 
-- This project is licensed under the MIT License.
 
 
