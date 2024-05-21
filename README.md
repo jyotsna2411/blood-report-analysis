@@ -51,8 +51,6 @@ Random Forest Classifier2. Naive Bayes Classifier3. Support Vector Machine (SVM)
 
 
 
-Feel free to explore and contribute to the project!
-
 
 
 
