@@ -38,13 +38,7 @@ bash
 Copy code
 git clone https://github.com/jyotsna2411/blood-report-analysis.git
 Install required packages:
-
-bash
-Copy code
 pip install -r requirements.txt
-Usage:
-Data:
-We have created our datasets by using real-time reports from medical labs.
 
 **Models**:
 Random Forest Classifier2. Naive Bayes Classifier3. Support Vector Machine (SVM) Classifier4. XGBoost Classifier5. K-Nearest Neighbors (KNN) Classifier6. AdaBoost ClassifierThese models are utilized to predict health conditions based on blood test results. The project involves training and evaluating these models, including hyperparameter tuning to optimize their performance. Additionally, the use of pipelines and feature standardization is incorporated to ensure robust and accurate predictions.
